@@ -1,33 +1,30 @@
 
-public class AccountingIFApp {
+public class AccountingArrayApp {
 
 	public static void main(String[] args) {
 		
 		double valueOfSupply = Double.parseDouble(args[0]);
 		double vatRate = 0.1;
+		
 		double expenseRate = 0.3;
 		
 		double vat = valueOfSupply * vatRate;
 		double total = valueOfSupply + vat;
 		double expense = valueOfSupply * expenseRate;
-		
-		
-		// 목표: income이 10000원 보다 작다면, 첫번째 사람이 다 가져가고, 10000원보다 크다면 5:3:2로 나눈다.
 		double income = valueOfSupply - expense;
 		
-		double dividend1;
-		double dividend2;
-		double dividend3;
+		double rate1 = 0.5;
+		double rate2 = 0.3;
+		double rate3 = 0.2;
 		
-		if (income < 10000.0) {
-			dividend1 = income * 1.0;
-			dividend2 = income * 0;
-			dividend3 = income * 0;
-		} else {
-			dividend1 = income * 0.5;
-			dividend2 = income * 0.3;
-			dividend3 = income * 0.2;
-		}
+	    double[] dividendRate = new double[3];
+	    dividendRate[0] = 0.5;
+	    dividendRate[1] = 0.3;
+	    dividendRate[2] = 0.2;
+		
+		double dividend1 = income * dividendRate[0];
+		double dividend2 = income * dividendRate[1];
+		double dividend3 = income * dividendRate[2];
 		
 		System.out.println("Value of Supply: " + valueOfSupply);
 		System.out.println("VAT: " + vat);
